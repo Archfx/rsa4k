@@ -156,7 +156,7 @@ module ModExp_tb();
 			end
 
 			if (done_i) begin
-				t = modOut;
+				r = modOut;
 				buf_state <= CALC_T;
 				mode <= 1;
 				go_r <= 1;
@@ -172,7 +172,7 @@ module ModExp_tb();
 			end
 
 			if (done_i) begin
-				r = modOut;
+				// t = modOut;
 				buf_state <= CALC_N0;
 				mode <= 0;
 				go_i <= 1;
@@ -203,7 +203,7 @@ module ModExp_tb();
             e_buf <= exponent[ ((counter) * `DATA_WIDTH) +: `DATA_WIDTH ];
             n_buf <= modulus[ ((counter) * `DATA_WIDTH) +: `DATA_WIDTH ];
 			r_buf <= r[ ((counter) * `DATA_WIDTH) +: `DATA_WIDTH ];
-			t_buf <= t[ ((counter) * `DATA_WIDTH) +: `DATA_WIDTH ];
+			t_buf <= modOut[ ((counter) * `DATA_WIDTH) +: `DATA_WIDTH ];
             counter <= counter +1;
 
             if (counter == 64) begin
