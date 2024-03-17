@@ -5,7 +5,7 @@ module modulus_TB;
     reg [4095:0] r;
 	reg [4095:0] t;
 	wire [4095:0] modOut;
-	wire [31:0] modulo_inv;
+	wire [63:0] modulo_inv;
 	wire valid;
     wire done;
     
@@ -20,7 +20,7 @@ module modulus_TB;
         .done(done)
     );
 
-	// Instantiate the module
+	// Instantiate the modular Inverse
 	modInv uut2 (
 		.clk(clk),
 		.go(goi),

@@ -1,14 +1,14 @@
 module modInv (
     input clk, go,
     input signed [4095:0] n,
-    output reg signed [31:0] modulo_inv,
+    output reg signed [63:0] modulo_inv,
     output reg valid
 );
 
 reg signed [4095:0] a, b;
-reg signed [31:0] x, y, prev_x, prev_y, temp_a, temp_x, temp_y;
+reg signed [63:0] x, y, prev_x, prev_y, temp_a, temp_x, temp_y;
 reg signed [4095:0] quotient;
-parameter [4095:0] m = 4096'd4294967296;
+parameter [4095:0] m = 4096'd18446744073709551616;
 
 
 
