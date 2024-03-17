@@ -83,7 +83,7 @@ module rsa4k(
                 // buf_state <= SEND_INPUT;
                 done <= 0;
                 getResult <= 0;
-                // startCompute <= 1;
+                startCompute <= 0;
 				buf_state <= CALC_R;
 				go_r <= 1;
 				mode <= 0;
