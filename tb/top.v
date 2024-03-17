@@ -156,7 +156,7 @@ module ModExp_tb();
 			end
 
 			if (done_i) begin
-				r <= modOut;
+				r = modOut;
 				buf_state <= CALC_T;
 				mode <= 1;
 				go_r <= 1;
