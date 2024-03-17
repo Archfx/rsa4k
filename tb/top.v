@@ -171,7 +171,7 @@ module ModExp_tb();
 			if (done_i) begin
 				t = modOut;
 				buf_state <= CALC_N0;
-				mode <= 0;
+				// mode <= 0
 				go_i <= 1;
 				$display("Result t: %h", modOut);
 			end
