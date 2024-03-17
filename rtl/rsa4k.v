@@ -17,7 +17,7 @@ module rsa4k(
 	input [(`RSA_WIDTH - 1):0]  message,
 	input [(`RSA_WIDTH - 1):0]  exponent,
 	input [(`RSA_WIDTH - 1):0]  modulus, 
-	output reg [(width - 1):0] cypher,
+	output reg [(`RSA_WIDTH  - 1):0] cypher,
     output reg done
 );
 
