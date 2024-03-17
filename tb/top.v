@@ -172,7 +172,7 @@ module ModExp_tb();
 				t = modOut;
 				buf_state <= CALC_N0;
 				mode <= 0;
-				go_i <= 1;
+				go_i <= 0;
 			end
 			else buf_state <= CALC_T;
 
