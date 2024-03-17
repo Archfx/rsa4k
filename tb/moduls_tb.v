@@ -56,7 +56,7 @@ module modulus_TB;
 		
         wait(done)
 
-        #100;
+        // #100;
         // $display("Result: %h", r[0+:32]);
         // $display("Result: %b", r[4064+:32]);
         $display("Result r: %h", r);
@@ -68,7 +68,7 @@ module modulus_TB;
 		go = 0;
         wait(done)
 
-        #100;
+        // #100;
         // $display("Result: %h", r[0+:32]);
         // $display("Result: %b", r[4064+:32]);
         $display("Result t: %h", t);

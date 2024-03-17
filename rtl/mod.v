@@ -39,8 +39,8 @@ always @(posedge clk) begin
                 end
                 else begin 
                     if (mode == op_R) begin
-                        count <=DONE; 
-                        done <= 0;
+                        // count <=DONE; 
+                        done <= 1;
                     end
                     if (mode == op_T) begin
                         count<=R2;
@@ -50,6 +50,7 @@ always @(posedge clk) begin
             end
             R2: begin
                 r_temp <= (r_temp * r_temp)%n;
+                done <= 0;
                 count<=DONE;
             end
             DONE: begin
