@@ -1,3 +1,13 @@
+////////////////////////////////////////////////////////////////////////////////
+// File:        modInv.v
+// Description: Compute Modular inverse of a prime number
+// Author:      Aruna Jayasena
+// Date:        March 17, 2024
+// Version:     1.0
+// Revision:    -
+// Company:     archfx.github.io
+////////////////////////////////////////////////////////////////////////////////
+
 module modInv (
     input clk, go,
     input signed [4095:0] n,

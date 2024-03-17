@@ -11,4 +11,6 @@
 `define ADDR_WIDTH32 7
 `define TOTAL_ADDR32 (2 ** `ADDR_WIDTH32)
 
+`define RSA_WIDTH 4096
+
 `endif

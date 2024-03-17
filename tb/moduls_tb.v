@@ -1,3 +1,13 @@
+////////////////////////////////////////////////////////////////////////////////
+// File:        modulus_tb.v
+// Description: Test the implementations of modular computations
+// Author:      Aruna Jayasena
+// Date:        March 17, 2024
+// Version:     1.0
+// Revision:    -
+// Company:     archfx.github.io
+////////////////////////////////////////////////////////////////////////////////
+
 module modulus_TB;
  
     reg clk, go, goi, mode;

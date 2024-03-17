@@ -1,3 +1,14 @@
+////////////////////////////////////////////////////////////////////////////////
+// File:        mod.v
+// Description: Modular computation to compute parameters r and t.
+// Author:      Aruna Jayasena
+// Date:        March 17, 2024
+// Version:     1.0
+// Revision:    -
+// Company:     archfx.github.io
+////////////////////////////////////////////////////////////////////////////////
+
+
 module rtMod(
     input wire clk,
     input wire go,

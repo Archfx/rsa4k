@@ -58,31 +58,8 @@ module ModExp
     // for data initialization
     reg [`ADDR_WIDTH32 - 1 : 0] addr_buf;
     reg [1 : 0] addr_buf2;
-    // wire [`DATA_WIDTH32 - 1 : 0] r_buf;
-    // wire [`DATA_WIDTH32 - 1 : 0] t_buf;
-    // wire [`DATA_WIDTH32 - 1 : 0] nprime0_buf;
-    // wire [`DATA_WIDTH32 - 1 : 0] n_buf;
     reg [`DATA_WIDTH32 - 1 : 0] res_buf;
-    // r_mem r_mem0 (.address(addr_buf), .clock(clk), .q(r_buf));
-    // t_mem t_mem0 (.address(addr_buf), .clock(clk), .q(t_buf));
-    // nprime0_mem nprime0_mem0 (.address(addr_buf2), .clock(clk), .q(nprime0_buf));
-    // n_mem n_mem0 (.address(addr_buf), .clock(clk), .q(n_buf));
 
-    // mem #(
-    // .INIT_FILE                           ( "rMem.mem")
-    // )r_mem0 (.address(addr_buf), .clock(clk), .wren(1'b0), .data(0), .q(r_buf));
-
-    // mem #(
-    // .INIT_FILE                           ( "tMem.mem")
-    // ) t_mem0 (.address(addr_buf), .clock(clk), .wren(1'b0), .data(0), .q(t_buf));
-
-    // mem #(
-    // .INIT_FILE                           ( "nprime0Mem.mem")
-    // ) nprime0_mem0 (.address(addr_buf2), .clock(clk), .wren(1'b0), .data(0), .q(nprime0_buf));
-
-    // mem #(
-    // .INIT_FILE                           ( "nMem.mem")
-    // ) n_mem0 (.address(addr_buf), .clock(clk), .wren(1'b0), .data(0), .q(n_buf));
     
     initial begin   // set to 0 
         for(i = 0; i < `TOTAL_ADDR + 2; i = i + 1) begin
@@ -148,46 +125,6 @@ module ModExp
                     end
                 end
                 
-                // LOAD_N:     // read and initialize r, t, nprime0, n
-                // begin
-                //     if(i <= `TOTAL_ADDR32) begin
-                //         if(k == 0) begin
-                //             addr_buf = i;
-                //             if(i <= 2)
-                //                 addr_buf2 = i;
-                //             else 
-                //                 addr_buf2 = 0;
-                //             k = 1;
-                //         end
-                //         else begin
-                //             k = 0;
-                //             if(i > 0) begin
-                //                 if(i == 1)
-                //                     nprime0[0 +: `DATA_WIDTH32] = nprime0_buf;
-                //                 else if(i == 2)
-                //                     nprime0[`DATA_WIDTH32 +: `DATA_WIDTH32] = nprime0_buf;
-                                    
-                //                 if((i - 1) % 2 == 0) begin
-                //                     // t_in[(i - 1) / 2][0 +: `DATA_WIDTH32] = t_buf;
-                //                     // n_in[(i - 1) / 2][0 +: `DATA_WIDTH32] = n_buf;
-                //                     // r_in[(i - 1) / 2][0 +: `DATA_WIDTH32] = r_buf;
-                //                 end
-                //                 else if((i - 1) % 2 == 1) begin
-                //                     // t_in[(i - 1) / 2][`DATA_WIDTH32 +: `DATA_WIDTH32] = t_buf;
-                //                     // n_in[(i - 1) / 2][`DATA_WIDTH32 +: `DATA_WIDTH32] = n_buf;
-                //                     // r_in[(i - 1) / 2][`DATA_WIDTH32 +: `DATA_WIDTH32] = r_buf;
-                //                 end
-                //             end
-                //             i = i + 1;
-                //         end
-                //     end
-                //     else begin
-                //         i = 0;
-                //         j = 0;
-                //         k = 0;
-                //         exp_state = WAIT_COMPUTE;
-                //     end             
-                // end
             
                 WAIT_COMPUTE:
                 begin
