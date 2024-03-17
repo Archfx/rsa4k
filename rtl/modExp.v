@@ -869,6 +869,7 @@ module ModExp
                 TERMINAL:
                 begin
                     res_out = 64'h0000000000000000;
+					exp_state = INIT_STATE;
                 end
             endcase
         end
