@@ -50,24 +50,24 @@ module ModExp_tb();
 
 
 
-        #10
-        reset = 1;
-        #10
-        reset = 0;
+        // #10
+        // reset = 1;
+        // #10
+        // reset = 0;
 
 
-        go = 0;
+        // go = 0;
 
 
-        message = 4096'd8;
-        exponent =  4096'd13;
-        modulus =  4096'd77;
-        cypher = 0;
+        // message = 4096'd8;
+        // exponent =  4096'd13;
+        // modulus =  4096'd77;
+        // cypher = 0;
 
-        go = 1;
-        wait (done);
-        // wait (exp_state == OUTPUT_RESULT);
-        $display("cypher value (dec) : %d (hex) 0x%h", cypher, cypher);
+        // go = 1;
+        // wait (done);
+        // // wait (exp_state == OUTPUT_RESULT);
+        // $display("cypher value (dec) : %d (hex) 0x%h", cypher, cypher);
 
         #10
         reset = 1;
