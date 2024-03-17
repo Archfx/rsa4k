@@ -59,26 +59,6 @@ module ModExp
     reg [`DATA_WIDTH32 - 1 : 0] res_buf;
 
     
-    // initial begin   // set to 0 
-    //     for(i = 0; i < `TOTAL_ADDR + 2; i = i + 1) begin
-    //         v[i] = 64'h0000000000000000;
-    //     end
-    //     for(i = 0; i < `TOTAL_ADDR; i = i + 1) begin
-    //         m_in[i] = 64'h0000000000000000;
-    //         e_in[i] = 64'h0000000000000000;
-    //     end
-    //     res_out = 64'h0000000000000000;
-        
-    //     z = 64'h0000000000000000;   // initial C = 0
-    //     i = 0;
-    //     j = 0;
-    //     k = 0;
-    //     state = S0;
-    //     exp_state = INIT_STATE;
-    //     k_e1 = `TOTAL_ADDR - 1;
-    //     k_e2 = `DATA_WIDTH - 1;
-    // end
-    
     always @ (posedge clk or posedge reset) begin
         if (reset) begin    // reset all...
             for(i = 0; i < `TOTAL_ADDR + 2; i = i + 1) begin
@@ -111,9 +91,9 @@ module ModExp
                     if(i <= `TOTAL_ADDR) begin
                         m_in[i] = m_buf;
                         e_in[i] = e_buf;
-                        n_in[i] = n_buf; //ltr
-						r_in[i] = r_buf; //ltr
-						t_in[i] = t_buf; //ltr
+                        n_in[i] = n_buf; 
+						r_in[i] = r_buf; 
+						t_in[i] = t_buf;
                         
                         i = i + 1;
                     end
@@ -866,9 +846,11 @@ module ModExp
                 
                 TERMINAL:
                 begin
-                    res_out = 64'h0000000000000000;
-					exp_state = INIT_STATE;
+					k = 0;
 					state = S0;
+					exp_state = INIT_STATE
+                    res_out = 64'h0000000000000000;
+					
                 end
             endcase
         end
