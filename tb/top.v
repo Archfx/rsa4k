@@ -11,6 +11,7 @@ module ModExp_tb();
     reg startInput;
     reg startCompute;
     reg getResult;
+	reg mode;
     wire [`DATA_WIDTH - 1 : 0] res_out;
     wire [4 : 0] exp_state;
     wire [3 : 0] state;
@@ -21,7 +22,7 @@ module ModExp_tb();
 	reg [63:0] nprime0;
 	wire [63:0] modulo_inv;
 	wire valid;
-    wire done, done_i;
+    wire done_i;
     reg [7:0] counter;
 
     // Outputs  of the IP
@@ -31,7 +32,7 @@ module ModExp_tb();
     reg [(width - 1):0] cypher;
     
     ModExp modexp0(
-        .clk(clk), .reset(reset), .m_buf(m_buf), .e_buf(e_buf),  .n_buf(n_buf), .r_buf(r_buf), .t_buf(t_buf), .nprime0(modulo_inv)
+        .clk(clk), .reset(reset), .m_buf(m_buf), .e_buf(e_buf),  .n_buf(n_buf), .r_buf(r_buf), .t_buf(t_buf), .nprime0(modulo_inv),
         .startInput(startInput), .startCompute(startCompute), .getResult(getResult), 
         .exp_state(exp_state), .state(state), .res_out(res_out)
     );
@@ -42,8 +43,8 @@ module ModExp_tb();
 
     initial begin
 
-        $vcdplusfile("rsamont.vpd");
-        $vcdpluson();
+        // $vcdplusfile("rsamont.vpd");
+        // $vcdpluson();
 
         clk = 0;
 
