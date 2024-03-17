@@ -131,7 +131,7 @@ module ModExp_tb();
 
             if(go) begin
                 counter <= 0;
-                startInput <= 1;
+                // startInput <= 1;
                 // buf_state <= SEND_INPUT;
                 done <= 0;
                 getResult <= 0;
@@ -156,7 +156,7 @@ module ModExp_tb();
 			end
 
 			if (done_i) begin
-				r = modOut;
+				t = modOut;
 				buf_state <= CALC_T;
 				mode <= 1;
 				go_r <= 1;
@@ -172,7 +172,7 @@ module ModExp_tb();
 			end
 
 			if (done_i) begin
-				t <= modOut;
+				r <= modOut;
 				buf_state <= CALC_N0;
 				mode <= 0;
 				go_i <= 1;
@@ -189,6 +189,8 @@ module ModExp_tb();
 
 			if (valid) begin
 				buf_state <= SEND_INPUT;
+				startInput <= 1;
+				// startCompute <= 1;
 				counter <= 0;
 				nprime0 = modulo_inv;
 			end
