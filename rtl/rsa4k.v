@@ -68,6 +68,7 @@ module rsa4k(
 			r_buf <= 64'h0000000000000000;
 			t_buf <= 64'h0000000000000000;
 			nprime0 <= 64'h0000000000000000;
+			done <= 0;
         end
     
     end
@@ -171,6 +172,7 @@ module rsa4k(
                 counter <=  0;
                 // getResult <= 1;
                 done <=1;
+				buf_state<= IDLE;
             end
         end
 
