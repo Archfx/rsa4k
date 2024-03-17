@@ -12,7 +12,8 @@ RSA4k is a fully self contained verilog implementation of RSA 4096bits.
 │   ├── modInv.v
 │   ├── mod.v
 │   ├── mulAdd.v
-│   └── _parameter.v
+│   ├── _parameter.v
+│   └── rsa4k.v
 ├── sim.tcl
 └── tb
     ├── moduls_tb.v
