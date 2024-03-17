@@ -164,7 +164,7 @@ module rsa4k(
             cypher [ ((counter-1) * `DATA_WIDTH) +: `DATA_WIDTH ]  <= res_out;
             counter <= counter +1;
             // $display("Read output Ctr : %d", counter);
-            $display("Read Input Ctr : %d c_buf: %d", counter, res_out);
+            // $display("Read Input Ctr : %d c_buf: %d", counter, res_out);
             if (counter == 64) begin
                 buf_state<= IDLE;
                 // startCompute <= 1;

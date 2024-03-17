@@ -57,11 +57,9 @@ module ModExp_tb();
         wait (done);
         $display("cypher value (hex): 0x%h", cypher);
 		cypher_prev = cypher;
+		go =0;
 
-        #10
-        reset = 1;
-        #10
-        reset = 0;
+        #100
 
         go = 0;
 
@@ -78,7 +76,7 @@ module ModExp_tb();
         go = 1;
         wait (done);
 		#10
-        $display("cypher value (hex): 0x%h", cypher);
+        $display("Decrypted value (hex): 0x%h", cypher);
 
 
         $finish;
