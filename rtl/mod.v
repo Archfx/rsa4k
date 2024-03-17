@@ -35,11 +35,16 @@ always @(posedge clk) begin
                 if (r_temp > n) begin
                     r_temp <= r_temp % n;
                     count<=SUB;
+                    done <= 0;
                 end
                 else begin 
-                    if (mode == op_R) count <=DONE; 
+                    if (mode == op_R) begin
+                        count <=DONE; 
+                        done <= 0;
+                    end
                     if (mode == op_T) begin
                         count<=R2;
+                        done <= 0;
                     end
                 end
             end
