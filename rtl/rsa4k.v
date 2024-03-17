@@ -79,7 +79,7 @@ module rsa4k(
 
             if(go) begin
                 counter <= 0;
-                // startInput <= 1;
+                startInput <= 0;
                 // buf_state <= SEND_INPUT;
                 done <= 0;
                 getResult <= 0;
@@ -87,6 +87,12 @@ module rsa4k(
 				buf_state <= CALC_R;
 				go_r <= 1;
 				mode <= 0;
+				m_buf <= 64'h0000000000000000;
+				e_buf <= 64'h0000000000000000;
+				n_buf <= 64'h0000000000000000;
+				r_buf <= 64'h0000000000000000;
+				t_buf <= 64'h0000000000000000;
+				nprime0 <= 64'h0000000000000000;
             end
 
             if (exp_state == COMPLETE) begin
