@@ -92,7 +92,7 @@ module rsa4k(
             if (exp_state == COMPLETE) begin
                 counter <= 0;
                 buf_state <= READ_OUTPUT;
-                startCompute <= 1;          
+                // startCompute <= 1;          
             end
            
         end
