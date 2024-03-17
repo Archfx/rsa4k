@@ -43,11 +43,11 @@ module ModExp_tb();
 
     initial begin
 
-        // $vcdplusfile("rsamont.vpd");
-        // $vcdpluson();
+        $vcdplusfile("rsamont.vpd");
+        $vcdpluson();
 
-		$dumpfile("rsa4k.vcd");
-  		$dumpvars(0);
+		// $dumpfile("rsa4k.vcd");
+  		// $dumpvars(0);
 
         clk = 0;
 
