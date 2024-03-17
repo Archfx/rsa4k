@@ -135,7 +135,7 @@ module ModExp_tb();
                 startCompute <= 1;
 				buf_state <= CALC_R;
 				go_r <= 1;
-				mode <= 0;
+				mode = 0;
             end
 
             if (exp_state == COMPLETE) begin
@@ -155,7 +155,7 @@ module ModExp_tb();
 			if (done_i) begin
 				r = modOut;
 				buf_state <= CALC_T;
-				mode <= 1;
+				mode = 1;
 				go_r <= 1;
 			end
 			else buf_state <= CALC_R;	
