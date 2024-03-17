@@ -32,8 +32,8 @@ end
 always @(posedge clk) begin
         case (count)
             SUB: begin
-                if (r_temp > {2'd0, n}) begin
-                    r_temp <= r_temp - {2'd0, n};
+                if (r_temp > n) begin
+                    r_temp <= r_temp % n;
                     count<=SUB;
                 end
                 else begin 
