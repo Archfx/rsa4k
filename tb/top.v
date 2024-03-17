@@ -64,7 +64,7 @@ module ModExp_tb();
         go = 0;
 
 
-        message = cypher;
+        message = cypher_prev;
         exponent =  4096'd37;
         modulus =  4096'd77;
 
