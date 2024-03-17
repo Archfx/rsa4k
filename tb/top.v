@@ -46,6 +46,9 @@ module ModExp_tb();
         // $vcdplusfile("rsamont.vpd");
         // $vcdpluson();
 
+		$dumpfile("rsa4k.vcd");
+  		$dumpvars(0);
+
         clk = 0;
 
 
