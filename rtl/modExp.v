@@ -848,9 +848,8 @@ module ModExp
                 begin
 					k = 0;
 					state = S0;
-					exp_state = INIT_STATE
+					exp_state = INIT_STATE;
                     res_out = 64'h0000000000000000;
-					
                 end
             endcase
         end
