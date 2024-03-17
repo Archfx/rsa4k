@@ -7,16 +7,15 @@ module ModExp
 (
     input clk,
     input reset,
-    input startInput,   // tell FPGA to start input 
-    input startCompute, // tell FPGA to start compute
-    input getResult,    // tell FPGA to output result
+    input startInput,   
+    input startCompute, 
+    input getResult,    
     input [`DATA_WIDTH - 1 : 0] m_buf,  
     input [`DATA_WIDTH - 1 : 0] e_buf,
     input [`DATA_WIDTH - 1 : 0] n_buf, 
 	input [`DATA_WIDTH - 1 : 0] r_buf, 
 	input [`DATA_WIDTH - 1 : 0] t_buf, 
 	input [`DATA_WIDTH - 1 : 0] nprime0,
-    // wire [`DATA_WIDTH32 - 1 : 0] n_buf, 
     output reg [3 : 0] state,
     output reg [4 : 0] exp_state,   //  for MonExp
     output reg [`DATA_WIDTH - 1 : 0] res_out
@@ -26,7 +25,6 @@ module ModExp
     reg [`DATA_WIDTH - 1 : 0] r_in [`TOTAL_ADDR - 1 : 0];   // for r input
     reg [`DATA_WIDTH - 1 : 0] t_in [`TOTAL_ADDR - 1 : 0];   // for t input
     reg [`DATA_WIDTH - 1 : 0] e_in [`TOTAL_ADDR - 1 : 0];   // for e input
-    // reg [`DATA_WIDTH - 1 : 0] nprime0;  // a memory must have unpacked array! for readmemh
     reg [`DATA_WIDTH - 1 : 0] n_in [`TOTAL_ADDR - 1 : 0];   // for n input
     
     reg [`DATA_WIDTH - 1 : 0] m_bar [`TOTAL_ADDR - 1 : 0];  // multiple usage, to save regs
@@ -870,6 +868,7 @@ module ModExp
                 begin
                     res_out = 64'h0000000000000000;
 					exp_state = INIT_STATE;
+					state = S0;
                 end
             endcase
         end
