@@ -17,8 +17,8 @@ module ModExp_tb();
     wire [3 : 0] state;
 
     parameter [15:0] width  = 4096;
-    reg [(width - 1):0] message, exponent, modulus, r, t;
-	wire [(width - 1):0] modOut;
+    reg [(width - 1):0] message, exponent, modulus, r;
+	wire [(width - 1):0] t;
 	reg [63:0] nprime0;
 	wire [63:0] modulo_inv;
 	wire valid;
@@ -156,7 +156,7 @@ module ModExp_tb();
 			end
 
 			if (done_i) begin
-				r = modOut;
+				r = t;
 				buf_state <= CALC_T;
 				mode <= 1;
 				go_r <= 1;
@@ -172,7 +172,6 @@ module ModExp_tb();
 			end
 
 			if (done_i) begin
-				// t = modOut;
 				buf_state <= CALC_N0;
 				mode <= 0;
 				go_i <= 1;
@@ -203,7 +202,7 @@ module ModExp_tb();
             e_buf <= exponent[ ((counter) * `DATA_WIDTH) +: `DATA_WIDTH ];
             n_buf <= modulus[ ((counter) * `DATA_WIDTH) +: `DATA_WIDTH ];
 			r_buf <= r[ ((counter) * `DATA_WIDTH) +: `DATA_WIDTH ];
-			t_buf <= modOut[ ((counter) * `DATA_WIDTH) +: `DATA_WIDTH ];
+			t_buf <= t[ ((counter) * `DATA_WIDTH) +: `DATA_WIDTH ];
             counter <= counter +1;
 
             if (counter == 64) begin
@@ -242,8 +241,8 @@ module ModExp_tb();
 	// always @(posedge clk) begin
 	
 	//     case(mode)
-	//         0: r=modOut;
-	//         1: t=modOut;
+	//         0: r=t;
+	//         1: t=t;
 	//     endcase
 	
 	// end
@@ -253,7 +252,7 @@ module ModExp_tb();
         .go(go_r),
         .mode(mode),
         .n(modulus),
-        .r(modOut),
+        .r(t),
         .done(done_i)
     );
 
