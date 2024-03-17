@@ -210,9 +210,9 @@ module ModExp_tb();
                 counter <=  0;
                 getResult <= 1;
 
-				$display("Result r: %h", r);
-				$display("Result t: %h", t);
-				$display("Result nprime0: %h", nprime0);
+				// $display("Result r: %h", r);
+				// $display("Result t: %h", t);
+				// $display("Result nprime0: %h", nprime0);
             end
             // $display("Send Input Ctr : %d m_buf: %d", counter, message[ ((counter) * `DATA_WIDTH) +: `DATA_WIDTH ]);
         end
