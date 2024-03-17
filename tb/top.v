@@ -17,6 +17,7 @@ module ModExp_tb();
     reg [(width - 1):0] message, exponent, modulus;
 	reg go;
     wire done;
+	wire [(width - 1):0] cypher;
     
 
     initial begin
@@ -70,11 +71,12 @@ module ModExp_tb();
 
         go = 1;
         wait (done);
+		#10
         $display("cypher value (hex): 0x%h", cypher);
 
 
         $finish;
-        end
+    end
     
     always begin
         #5 clk = ~clk;
