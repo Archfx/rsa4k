@@ -32,7 +32,7 @@ module ModExp_tb();
     reg [(width - 1):0] cypher;
     
     ModExp modexp0(
-        .clk(clk), .reset(reset), .m_buf(m_buf), .e_buf(e_buf),  .n_buf(n_buf), .r_buf(r_buf), .t_buf(t_buf), .nprime0(modulo_inv),
+        .clk(clk), .reset(reset), .m_buf(m_buf), .e_buf(e_buf),  .n_buf(n_buf), .r_buf(r_buf), .t_buf(t_buf), .nprime0(nprime0),
         .startInput(startInput), .startCompute(startCompute), .getResult(getResult), 
         .exp_state(exp_state), .state(state), .res_out(res_out)
     );
@@ -220,6 +220,10 @@ module ModExp_tb();
 				buf_state <= SEND_INPUT;
 				counter <= 0;
 				nprime0 = modulo_inv;
+				$display("Result r: %h", r);
+				$display("Result t: %h", t);
+				$display("Result nprime0: %h", nprime0);
+
 			end
 			else buf_state <= CALC_N0;
 
