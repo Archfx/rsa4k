@@ -17,7 +17,7 @@ module ModExp_tb();
     wire [3 : 0] state;
 
     parameter [15:0] width  = 4096;
-    reg [(width - 1):0] message, exponent, modulus, n, r, t;
+    reg [(width - 1):0] message, exponent, modulus, r, t;
 	wire [(width - 1):0] modOut;
 	reg [63:0] nprime0;
 	wire [63:0] modulo_inv;
@@ -275,7 +275,7 @@ module ModExp_tb();
         .clk(clk),
         .go(go_r),
         .mode(mode),
-        .n(n),
+        .n(modulus),
         .r(modOut),
         .done(done_i)
     );
@@ -284,7 +284,7 @@ module ModExp_tb();
 	modInv uut2 (
 		.clk(clk),
 		.go(go_i),
-		.n(n),
+		.n(modulus),
 		.modulo_inv(modulo_inv),
 		.valid(valid)
 	);
