@@ -132,10 +132,10 @@ module ModExp_tb();
                 // buf_state <= SEND_INPUT;
                 done <= 0;
                 getResult <= 0;
-                startCompute <= 1;
+                // startCompute <= 1;
 				buf_state <= CALC_R;
 				go_r <= 1;
-				mode = 0;
+				mode <= 0;
             end
 
             if (exp_state == COMPLETE) begin
@@ -153,9 +153,9 @@ module ModExp_tb();
 			end
 
 			if (done_i) begin
-				r = modOut;
+				r <= modOut;
 				buf_state <= CALC_T;
-				mode = 1;
+				mode <= 1;
 				go_r <= 1;
 			end
 			else buf_state <= CALC_R;	
@@ -169,11 +169,11 @@ module ModExp_tb();
 			end
 
 			if (done_i) begin
-				t = modOut;
+				t <= modOut;
 				buf_state <= CALC_N0;
-				// mode <= 0
+				mode <= 0;
 				go_i <= 1;
-				$display("Result t: %h", modOut);
+				// $display("Result t: %h", modOut);
 			end
 			else buf_state <= CALC_T;
 
@@ -189,9 +189,9 @@ module ModExp_tb();
 				buf_state <= SEND_INPUT;
 				counter <= 0;
 				nprime0 = modulo_inv;
-				// $display("Result r: %h", r);
-				// $display("Result t: %h", t);
-				// $display("Result nprime0: %h", nprime0);
+				$display("Result r: %h", r);
+				$display("Result t: %h", t);
+				$display("Result nprime0: %h", nprime0);
 
 			end
 			else buf_state <= CALC_N0;
