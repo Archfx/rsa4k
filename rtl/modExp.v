@@ -68,8 +68,6 @@ module ModExp
 				n_in[i] = 64'h0000000000000000;
 				m_bar[i] = 64'h0000000000000000;
 				c_bar[i] = 64'h0000000000000000;
-				v[i] = 64'h0000000000000000;
-
             end
             res_out = 64'h0000000000000000;
             z = 64'h0000000000000000;   // initial C = 0
@@ -859,7 +857,7 @@ module ModExp
 					state = S0;
 					exp_state = INIT_STATE;
                     res_out = 64'h0000000000000000;
-					
+
 					for(i = 0; i < `TOTAL_ADDR + 2; i = i + 1) begin
 						v[i] = 64'h0000000000000000;
 					end
@@ -871,8 +869,6 @@ module ModExp
 						n_in[i] = 64'h0000000000000000;
 						m_bar[i] = 64'h0000000000000000;
 						c_bar[i] = 64'h0000000000000000;
-						v[i] = 64'h0000000000000000;
-
 					end
 					res_out = 64'h0000000000000000;
 					z = 64'h0000000000000000;   // initial C = 0
@@ -884,8 +880,8 @@ module ModExp
 					i = 0;
 					j = 0;
 					k = 0;
-					state = S0;
-					exp_state = INIT_STATE;
+					state <= S0;
+					exp_state <= INIT_STATE;
 					k_e1 = `TOTAL_ADDR - 1;
 					k_e2 = `DATA_WIDTH - 1;					
                 end
