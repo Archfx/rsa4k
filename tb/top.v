@@ -61,11 +61,11 @@ module ModExp_tb();
 		cypher_prev = cypher;
 		go =0;
 
-        // #10
-        // reset = 1;
-        #1000
-        // reset = 0;
-        // #100
+        #10
+        reset = 1;
+        #10
+        reset = 0;
+        #100
 
         go = 0;
 		#10
