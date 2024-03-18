@@ -287,7 +287,6 @@ module ModExp
                         exp_state = BIGLOOP;
                     end
                     else begin
-						$display("hello");
                         if(k_e2 == 0) begin
                             k_e1 = k_e1 - 1;
                             k_e2 = `DATA_WIDTH - 1;

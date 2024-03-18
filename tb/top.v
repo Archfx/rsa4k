@@ -63,7 +63,7 @@ module ModExp_tb();
 
         #10
         reset = 1;
-        #10
+        #100
         reset = 0;
         #100
 
