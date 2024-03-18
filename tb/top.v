@@ -71,8 +71,12 @@ module ModExp_tb();
 		#10
 
 
-        message = 4096'd50;//cypher_prev;
-        exponent =  4096'd37;
+        // message = 4096'd50;//cypher_prev;
+        // exponent =  4096'd37;
+        // modulus =  4096'd77;
+
+		message = 4096'd8;
+        exponent =  4096'd13;
         modulus =  4096'd77;
 
         // message = 4096'h6a4a5a9d37dde9648c8e4f1ba3c73a8229755dc01355d9a2c6d61388c016073c0ebac73afc19dbc32d2a20b875ee44009ddfcc910005629453d314f13ac405a3ada039150bd12328286d4e09c4fe5e9e2484f63b033265af9df8ffb631014a2748b2f5d9a4c7b0c0da78d3b430b4b4c1892f32dc7b79ed4390f4a2bacd2bc45d4203b3c704b3ae54d6796053ac23674def1493bbd095d7e35dfdc39a1d169678e4a0d4c8e0df74807f8f48d8a28ec8e5209e16599c52d57883fd9a7e2123df4856029b11f5ae2b0818a7ca93b52ba7539586d092859be981bcca0740a38e81370d44f6c5f61bd6f0961bd4670c084341310b2bba0a0802e9e3ed5f6ce2aa65cc;
