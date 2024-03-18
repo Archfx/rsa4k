@@ -31,14 +31,14 @@ module ModExp_tb();
 		// $dumpfile("rsa4k.vcd");
   		// $dumpvars(0);
 
-        clk = 0;
+        // clk = 0;
 
 
 
-        #10
-        reset = 1;
-        #10
-        reset = 0;
+        // #10
+        // reset = 1;
+        // #10
+        // reset = 0;
 
 
         go = 0;
