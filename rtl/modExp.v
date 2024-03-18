@@ -882,8 +882,8 @@ module ModExp
 					k = 0;
 					state <= S0;
 					exp_state <= INIT_STATE;
-					k_e1 = `TOTAL_ADDR - 1;
-					k_e2 = `DATA_WIDTH - 1;					
+					k_e1 = 0;
+					k_e2 = 0;					
                 end
             endcase
         end
