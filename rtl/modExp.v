@@ -86,8 +86,10 @@ module ModExp
             case (exp_state)
                 INIT_STATE: // initial state
                 begin
-                    if(startInput)
+                    if(startInput) begin
                         exp_state = LOAD_M_E;
+						z = 64'h0000000000000000; 
+					end
                 end
             
                 LOAD_M_E:   // read in and initialize m, e
