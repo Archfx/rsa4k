@@ -54,12 +54,7 @@ module ModExp
     mul_add mul_add0 (.clk(clk), .x(x0), .y(y0), .z(z0), .last_c(last_c0), 
                 .s(s0), .c(c0));
 
-    // for data initialization
-    reg [`ADDR_WIDTH32 - 1 : 0] addr_buf;
-    reg [1 : 0] addr_buf2;
-    reg [`DATA_WIDTH32 - 1 : 0] res_buf;
 
-    
     always @ (posedge clk or posedge reset) begin
         if (reset) begin    // reset all...
             for(i = 0; i < `TOTAL_ADDR + 2; i = i + 1) begin
@@ -864,6 +859,35 @@ module ModExp
 					state = S0;
 					exp_state = INIT_STATE;
                     res_out = 64'h0000000000000000;
+					
+					for(i = 0; i < `TOTAL_ADDR + 2; i = i + 1) begin
+						v[i] = 64'h0000000000000000;
+					end
+					for(i = 0; i < `TOTAL_ADDR; i = i + 1) begin
+						m_in[i] = 64'h0000000000000000;
+						e_in[i] = 64'h0000000000000000;
+						r_in[i] = 64'h0000000000000000;
+						t_in[i] = 64'h0000000000000000;
+						n_in[i] = 64'h0000000000000000;
+						m_bar[i] = 64'h0000000000000000;
+						c_bar[i] = 64'h0000000000000000;
+						v[i] = 64'h0000000000000000;
+
+					end
+					res_out = 64'h0000000000000000;
+					z = 64'h0000000000000000;   // initial C = 0
+					m = 64'h0000000000000000;
+					x0 = 64'h0000000000000000;
+					y0 = 64'h0000000000000000;
+					z0 = 64'h0000000000000000;
+					last_c0 = 64'h0000000000000000;
+					i = 0;
+					j = 0;
+					k = 0;
+					state = S0;
+					exp_state = INIT_STATE;
+					k_e1 = `TOTAL_ADDR - 1;
+					k_e2 = `DATA_WIDTH - 1;					
                 end
             endcase
         end
