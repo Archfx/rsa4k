@@ -50,6 +50,7 @@ module ModExp
     reg [`DATA_WIDTH - 1 : 0] last_c0;
     wire [`DATA_WIDTH - 1 : 0] s0;
     wire [`DATA_WIDTH - 1 : 0] c0;
+
     mul_add mul_add0 (.clk(clk), .x(x0), .y(y0), .z(z0), .last_c(last_c0), 
                 .s(s0), .c(c0));
 
@@ -74,6 +75,8 @@ module ModExp
             end
             res_out = 64'h0000000000000000;
             z = 64'h0000000000000000;   // initial C = 0
+			x0 = 64'h0000000000000000;
+			z0 = 64'h0000000000000000;
             i = 0;
             j = 0;
             k = 0;
