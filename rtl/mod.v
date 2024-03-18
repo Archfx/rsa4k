@@ -51,7 +51,8 @@ always @(posedge clk) begin
                 else begin 
                     if (mode == op_R) begin
                         // count <=DONE; 
-                        done <= 1;
+                        done = 1;
+                        // done <= 1;
                     end
                     if (mode == op_T) begin
                         count<=R2;
