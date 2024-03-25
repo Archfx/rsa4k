@@ -10,17 +10,15 @@
 
 module modInv (
     input clk, go,
-    input signed [4095:0] n,
+    input [4095:0] n,
     output reg signed [63:0] modulo_inv,
     output reg valid
 );
-
-reg signed [4095:0] a, b;
+ 
+reg signed [4096:0] a, b;
 reg signed [63:0] x, y, prev_x, prev_y, temp_a, temp_x, temp_y;
-reg signed [4095:0] quotient;
-parameter [4095:0] m = 4096'd18446744073709551616;
-
-
+reg signed [4096:0] quotient;
+parameter [4096:0] m = 4097'd18446744073709551616;
 
 
 always @(posedge clk) begin
@@ -33,8 +31,7 @@ always @(posedge clk) begin
         prev_y <= 4096'd0;
         valid <= 1'b0;
         quotient <=0;
-        
-    end
+           end
     else begin
         // $display("b : %d", b);
         if (b != 4096'd0) begin
