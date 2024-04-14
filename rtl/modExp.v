@@ -1,7 +1,7 @@
 
 // MonPro module
 // follow this algorithm: http://cs.ucsb.edu/~koc/cs290g/docs/w01/mon1.pdf
-`include "_parameter.v"
+`include "rtl/_parameter.v"
  
  
 module ModExp

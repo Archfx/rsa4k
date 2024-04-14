@@ -8,7 +8,7 @@
 // Company:     archfx.github.io
 ////////////////////////////////////////////////////////////////////////////////
 
-`include "_parameter.v"
+`include "rtl/_parameter.v"
 
 module rsa4k(
     input clk,
