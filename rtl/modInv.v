@@ -30,8 +30,8 @@ always @(posedge clk) begin
         prev_x <= 4096'd1;
         prev_y <= 4096'd0;
         valid <= 1'b0;
-        quotient <=0;
-           end
+        quotient =0;
+    end
     else begin
         // $display("b : %d", b);
         if (b != 4096'd0) begin
