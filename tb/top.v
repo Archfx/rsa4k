@@ -8,7 +8,7 @@
 // Company:     archfx.github.io
 ////////////////////////////////////////////////////////////////////////////////
 
-`include "_parameter.v"
+`include "rtl/_parameter.v"
 
 module ModExp_tb();
     reg clk;
